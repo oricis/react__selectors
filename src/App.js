@@ -62,13 +62,31 @@ class App extends React.Component
         return (
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-
-                <h2 className="xxx">
-                    <Trans>Pruebas selects</Trans>
+                <h1>
+                    <Trans>Hello World</Trans>
+                </h1>
+                <h2>
+                    <Trans>
+                        This is a <a href="https://lingui.js.org/"
+                        rel="noopener noreferrer"
+                        target="_blank">
+                        @Lingui</a> translation
+                    </Trans>
                 </h2>
+
+                <hr className="w-100" />
+
+                <h3 className="xxx">
+                    <Trans>Tests selects</Trans>
+                </h3>
 
                 {langSelector}
                 {peopleSelector}
+                <hr className="w-100" />
+
+                <h3 className="xxx">
+                    <Trans>Tests radios</Trans>
+                </h3>
                 {radioGroup}
             </header>
         );
