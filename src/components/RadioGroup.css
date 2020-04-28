@@ -1,0 +1,11 @@
+
+.form-group {
+    border-radius : 5px;
+    background    : rgb(241, 240, 240);
+    display       : flex;
+    flex-flow     : column wrap;
+    padding       : 1rem;
+}
+.form-group * {
+    color: rgb(56, 56, 56);
+}

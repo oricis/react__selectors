@@ -7,8 +7,8 @@ function Radio(props)
         id={props.id}
         name={props.name}
         value={props.value}
-        checked={props.selected}
-        onChange={props.onChange()} />;
+        checked={props.checked}
+        onChange={props.onChange} />;
 }
 
 export default Radio;

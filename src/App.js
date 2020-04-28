@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import LangSelector from './components/LangSelector.jsx';
 import GenericSelector from './components/GenericSelector.jsx';
+import RadioGroup from './components/RadioGroup.jsx';
 import { langCodes, people } from './data/options.js';
 import './App.css';
 
@@ -28,6 +29,8 @@ class App extends React.Component
             + this.state.lang, 'Person: '
             + this.state.person); // HACK:
 
+        const selectedPersonKey = this.state.person.toLowerCase();
+
         const langSelector = (
             <LangSelector value={this.state.lang}
                 data={langCodes}
@@ -35,13 +38,23 @@ class App extends React.Component
             </LangSelector>
         );
 
-        const selectedPersonKey = this.state.person.toLowerCase();
         const peopleSelector = (
             <GenericSelector value={selectedPersonKey}
                 data={people}
                 label="name"
                 onChange={(lang) => { this.onChangeSelectedData(lang) }}>
             </GenericSelector>
+        );
+
+        const radioGroup = (
+            <RadioGroup value={selectedPersonKey} // TODO: revisar entrega
+                className="option-group form-group form-radio"
+                data={people}
+                groupName="people"
+                labelPosition="end" // end | start
+                propertyName="name"
+                onChange={(radioId) => { this.onSelectedRadio(radioId) }}>
+            </RadioGroup>
         );
 
         return (
@@ -54,6 +67,7 @@ class App extends React.Component
 
                 {langSelector}
                 {peopleSelector}
+                {radioGroup}
             </header>
         );
     }
@@ -71,6 +85,17 @@ class App extends React.Component
         }
 
         return result;
+    }
+
+    onSelectedRadio = (radioId) =>
+    {
+        console.log('onSelectedRadio() -> ' + radioId);
+
+        if (this.state && radioId !== this.state.person) {
+            this.setState({
+                person: radioId
+            });
+        }
     }
 
     onChangeSelectedData = (value) =>
