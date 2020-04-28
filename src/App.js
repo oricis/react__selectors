@@ -8,7 +8,9 @@ import './App.css';
 
 function Trans(props)
 {
-    return <span>{props.text}</span>;
+    const { ...other } = props;
+
+    return <span {...other} />
 }
 
 class App extends React.Component
@@ -62,7 +64,7 @@ class App extends React.Component
                 <img src={logo} className="App-logo" alt="logo" />
 
                 <h2 className="xxx">
-                    <Trans>Pruebas select</Trans>
+                    <Trans>Pruebas selects</Trans>
                 </h2>
 
                 {langSelector}
