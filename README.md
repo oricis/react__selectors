@@ -1,3 +1,38 @@
+# React Selectors
+
+***
+
+## About
+
+This repo constains some React tests.
+
+![react selectors](https://user-images.githubusercontent.com/7187599/80544957-82cedb00-89b2-11ea-953a-40c3ffcc94dc.png)
+
+
+Available components:
+
+ - GenericSelector (Select)
+ - LangSelector (Select)
+ - RadioGroup
+
+    - RadioBox
+
+        - Label
+        - Radio
+
+
+***
+
+## License notice
+
+This project is under **The MIT License (MIT)**.
+
+Copyright (c) 2020 Moisés Alcocer.
+
+***
+***
+***
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
