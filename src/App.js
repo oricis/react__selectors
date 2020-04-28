@@ -1,17 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
+import { Trans } from '@lingui/macro';
 import LangSelector from './components/LangSelector.jsx';
 import GenericSelector from './components/GenericSelector.jsx';
 import RadioGroup from './components/RadioGroup.jsx';
 import { langCodes, people } from './data/options.js';
 import './App.css';
 
-function Trans(props)
+/*function Trans(props)
 {
     const { ...other } = props;
 
     return <span {...other} />
-}
+}*/
 
 class App extends React.Component
 {

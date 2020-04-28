@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { I18nProvider } from '@lingui/react';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './index.css';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <I18nProvider language="en">
     <App />
-  </React.StrictMode>,
+  </I18nProvider>,
   document.getElementById('root')
 );
 

@@ -1,0 +1,38 @@
+{
+  "Hello World": {
+    "translation": "Hello World",
+    "origin": [
+      [
+        "src/App.js",
+        67
+      ]
+    ]
+  },
+  "Tests radios": {
+    "translation": "Tests radios",
+    "origin": [
+      [
+        "src/App.js",
+        89
+      ]
+    ]
+  },
+  "Tests selects": {
+    "translation": "Tests selects",
+    "origin": [
+      [
+        "src/App.js",
+        81
+      ]
+    ]
+  },
+  "This is a <0>@Lingui</0> translation": {
+    "translation": "This is a <0>@Lingui</0> translation",
+    "origin": [
+      [
+        "src/App.js",
+        70
+      ]
+    ]
+  }
+}
