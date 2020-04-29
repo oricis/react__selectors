@@ -32,6 +32,7 @@ class App extends React.Component
             + this.state.lang, 'Person: '
             + this.state.person); // HACK:
 
+        const activeLang = this.getValueFor(langCodes, 'label', this.state.lang);
         const selectedPersonKey = this.state.person.toLowerCase();
 
         const langSelector = (
@@ -82,6 +83,12 @@ class App extends React.Component
                 </h3>
 
                 {langSelector}
+                <p className="info">
+                    <Trans>
+                        The loading language is <strong>{activeLang}</strong>.
+                    </Trans>
+                </p>
+
                 {peopleSelector}
                 <hr className="w-100" />
 
@@ -102,6 +109,22 @@ class App extends React.Component
 
             if (object.default) {
                 result = object[propertyName];
+            }
+        }
+
+        return result;
+    }
+
+    getValueFor(arrObjects, propertyName, keyValue)
+    {
+        let result = '';
+        for (const index in arrObjects) {
+            const object = arrObjects[index]
+
+            if (object.key) {
+                result = (object.key === keyValue)
+                    ? object[propertyName]
+                    : result;
             }
         }
 
