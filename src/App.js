@@ -5,6 +5,7 @@ import LangSelector from './components/LangSelector.jsx';
 import GenericSelector from './components/GenericSelector.jsx';
 import RadioGroup from './components/RadioGroup.jsx';
 import { langCodes, people } from './data/options.js';
+import { getDefaultValue, getValueFor } from './helpers/Data.js';
 import './App.css';
 
 /*function Trans(props)
@@ -21,18 +22,19 @@ class App extends React.Component
         super(props);
 
         this.state = {
-            person: this.getDefaultValue(people, 'name'),
+            person: getDefaultValue(people, 'name'),
             lang: 'EN'
         };
     }
 
     render()
     {
-        console.log('render()', 'LANG: '
-            + this.state.lang, 'Person: '
-            + this.state.person); // HACK:
+        // HACK:
+        console.log(
+            'render()', 'LANG: ' + this.state.lang,
+            'Person: ' + this.state.person);
 
-        const activeLang = this.getValueFor(langCodes, 'label', this.state.lang);
+        const activeLang = getValueFor(langCodes, 'label', this.state.lang);
         const selectedPersonKey = this.state.person.toLowerCase();
 
         const langSelector = (
@@ -51,7 +53,7 @@ class App extends React.Component
         );
 
         const radioGroup = (
-            <RadioGroup value={selectedPersonKey} // TODO: revisar entrega
+            <RadioGroup value={selectedPersonKey}
                 className="option-group form-group form-radio"
                 data={people}
                 groupName="people"
@@ -100,36 +102,6 @@ class App extends React.Component
         );
     }
 
-
-    getDefaultValue(arrObjects, propertyName)
-    {
-        let result = '';
-        for (const index in arrObjects) {
-            const object = arrObjects[index]
-
-            if (object.default) {
-                result = object[propertyName];
-            }
-        }
-
-        return result;
-    }
-
-    getValueFor(arrObjects, propertyName, keyValue)
-    {
-        let result = '';
-        for (const index in arrObjects) {
-            const object = arrObjects[index]
-
-            if (object.key) {
-                result = (object.key === keyValue)
-                    ? object[propertyName]
-                    : result;
-            }
-        }
-
-        return result;
-    }
 
     onSelectedRadio = (radioId) =>
     {
