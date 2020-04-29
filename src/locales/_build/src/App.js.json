@@ -3,7 +3,7 @@
     "origin": [
       [
         "src/App.js",
-        67
+        70
       ]
     ]
   },
@@ -11,7 +11,7 @@
     "origin": [
       [
         "src/App.js",
-        70
+        73
       ]
     ]
   },
@@ -19,7 +19,15 @@
     "origin": [
       [
         "src/App.js",
-        81
+        84
+      ]
+    ]
+  },
+  "The loading language is <0>{activeLang}</0>.": {
+    "origin": [
+      [
+        "src/App.js",
+        89
       ]
     ]
   },
@@ -27,7 +35,7 @@
     "origin": [
       [
         "src/App.js",
-        89
+        98
       ]
     ]
   }
